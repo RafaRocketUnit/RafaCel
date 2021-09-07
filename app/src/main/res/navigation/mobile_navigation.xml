@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_main">
+
+    <fragment
+        android:id="@+id/navigation_main"
+        android:name="com.rafaapp.rafacel.ui.MainFragment"
+        android:label="Principal"
+        tools:layout="@layout/main_fragment">
+
+        <action android:id="@+id/action_main_to_registrar_usuario"
+            app:destination="@id/navigation_registrar" />
+
+        <action android:id="@+id/action_main_to_registrar_equipo"
+            app:destination="@id/navigation_registrar_celular" />
+
+        <action android:id="@+id/action_main_to_consultar"
+            app:destination="@id/navigation_consultar" />
+
+        <action android:id="@+id/action_main_to_actualizar"
+            app:destination="@id/navigation_actualizar" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_consultar"
+        android:name="com.rafaapp.rafacel.ui.consultar.ConsultarFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_consultar" />
+
+    <fragment
+        android:id="@+id/navigation_registrar"
+        android:name="com.rafaapp.rafacel.ui.registrar.RegistrarFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_registrar" />
+
+    <fragment
+        android:id="@+id/navigation_actualizar"
+        android:name="com.rafaapp.rafacel.ui.actualizar.ActualizarFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_actualizar" >
+
+        <action android:id="@+id/action_actualizar_to_detalle"
+            app:destination="@id/navigation_detalle_usuario" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_registrar_celular"
+        android:name="com.rafaapp.rafacel.ui.registrarcelular.RegistrarCelularFragment"
+        android:label="Registrar Celular"
+        tools:layout="@layout/registrar_celular" />
+
+    <fragment
+        android:id="@+id/navigation_detalle_usuario"
+        android:name="com.rafaapp.rafacel.ui.DetalleUsuario.DetalleUsuario"
+        android:label="Detalle Usuario"
+        tools:layout="@layout/detalle_usuario">
+
+        <action android:id="@+id/action_detalle_to_equipos"
+            app:destination="@+id/navigation_equipos"/>
+
+        <action android:id="@+id/action_detalle_to_facturas"
+            app:destination="@+id/navigation_facturas"/>
+        <action android:id="@+id/action_detalle_to_actualizar"
+            app:destination="@id/navigation_actualizar" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_equipos"
+        android:name="com.rafaapp.rafacel.ui.DetalleUsuario.EquiposFragment"
+        android:label="Equipos"
+        tools:layout="@layout/equipos"/>
+
+    <fragment
+        android:id="@+id/navigation_facturas"
+        android:name="com.rafaapp.rafacel.ui.DetalleUsuario.FacturasFragment"
+        android:label="Facturas"
+        tools:layout="@layout/facturas"/>
+
+
+
+</navigation>
